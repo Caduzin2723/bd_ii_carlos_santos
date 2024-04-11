@@ -1,4 +1,4 @@
-/*Carlos Eduardo Mariano dos Santos*/
+/*Carlos Eduardo Mariano dos Santos 2°DA*/
 
 INSERT INTO Clientes (ID_cliente, CPF, Nome, Endereco, Telefone)
 VALUES ('00001', '23456789012', 'Maria', 'Av. Principal, 456', '11987654321'),
@@ -7,7 +7,7 @@ VALUES ('00001', '23456789012', 'Maria', 'Av. Principal, 456', '11987654321'),
        ('00004', '56789012345', 'Paulo', 'Travessa das Pedras, 210', '11987654324'),
        ('00005', '67890123456', 'Mariana', 'Praça Central, 15', '11987654325');
 
-INSERT INTO Pizzas (ID_sabor, Sabor, ID_borda, Borda, Ingredientes)
+INSERT INTO Pizzas (ID_pizza, Sabor, ID_borda, Borda, Ingredientes)
 VALUES ('01', 'Calabresa', '01', 'Catupiry', 'Calabresa, queijo, molho de tomate'),
        ('02', 'Marguerita', '02', 'Cheddar', 'Mussarela, tomate, manjericão'),
        ('03', 'Quatro Queijos', '03', 'Catupiry', 'Mussarela, parmesão, provolone, gorgonzola'),
@@ -15,11 +15,11 @@ VALUES ('01', 'Calabresa', '01', 'Catupiry', 'Calabresa, queijo, molho de tomate
        ('05', 'Portuguesa', '02', 'Cheddar', 'Presunto, mussarela, ovos, cebola, azeitona, pimentão');
 
 INSERT INTO Pedidos (ID_pedido, ID_cliente, ID_pizza, Preco)
-VALUES ('000001', '00002', '01', 30.00),
-	   ('000002', '00003', '02', 35.00),
-	   ('000003', '00004', '03', 40.00),
-	   ('000004', '00005', '04', 32.50),
-	   ('000005', '00006', '05', 37.50);
+VALUES ('000001', '00001', '01', 30.00),
+	   ('000002', '00002', '02', 35.00),
+	   ('000003', '00003', '03', 40.00),
+	   ('000004', '00004', '04', 32.50),
+	   ('000005', '00005', '05', 37.50);
 
 INSERT INTO Fornecedores (ID_fornecedor, ID_materia, CNPJ, Telefone)
 VALUES ('00001', '00001', '12345678901234', '11987654321'),
@@ -34,4 +34,4 @@ VALUES ('00001', 'Pedro', 2500.00, 4.5),
        ('00003', 'Mário', 2300.00, 4.7),
        ('00004', 'Carla', 2600.00, 4.4),
        ('00005', 'João', 2700.00, 4.6);
-	   
+       
