@@ -8,7 +8,9 @@ USE Restaurante;
 CREATE TABLE IF NOT EXISTS Clientes( 
 	ID_cliente int(8) AUTO_INCREMENT, 
 	CPF varchar(11) not null, 
-	Nome varchar(255), 
+	Nome varchar(255),
+	Sexo varchar(255),
+	Idade varchar(3),
 	Endereco varchar(255), 
 	Email varchar(255), 
 	Telefone varchar(12), 
@@ -30,7 +32,9 @@ CREATE TABLE IF NOT EXISTS Filiais(
 CREATE TABLE IF NOT EXISTS Funcionarios( 
 	ID_func int(5) AUTO_INCREMENT, 
 	CPF varchar(11) not null, 
-	Nome varchar(255), 
+	Nome varchar(255),
+	Sexo varchar(255),
+	Idade varchar(3),
 	Endereco varchar(255), 
 	Email varchar(255), 
 	Telefone varchar(12), 
