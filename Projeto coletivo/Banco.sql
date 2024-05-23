@@ -42,7 +42,7 @@ CREATE TABLE IF NOT EXISTS Funcionarios(
 	ID_filial int(3),
 	Cargo varchar(255),
 	Data_contatacao datetime,
-	PRIMARY KEY (ID_func) 
+	PRIMARY KEY (ID_func),
 	FOREIGN KEY (ID_filial) REFERENCES Filiais(ID_filial)
 ); 
 
