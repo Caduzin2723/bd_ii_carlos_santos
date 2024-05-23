@@ -103,6 +103,7 @@ CREATE TABLE IF NOT EXISTS Bebidas(
 -- Tabela de Ingredientes
 CREATE TABLE IF NOT EXISTS Ingredientes(
 	ID_ingrediente int(3) AUTO_INCREMENT,
+	Nome varchar(255),
 	Unidade_medida Varchar(255),
 	ID_prato int(3),
 	ID_bebida int(3),
