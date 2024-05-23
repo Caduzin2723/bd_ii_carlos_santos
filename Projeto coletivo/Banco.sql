@@ -74,7 +74,7 @@ CREATE TABLE IF NOT EXISTS Fornecedores(
 -- Tabela de Estoque
 CREATE TABLE IF NOT EXISTS Estoque( 
 	ID_fornecedor int(5), 
-	ID_materia varchar(6) AUTO_INCREMENT, 
+	ID_materia int(6) AUTO_INCREMENT, 
 	Quantidade int(5),
 	ID_filial int(3),
 	PRIMARY KEY (ID_materia), 
