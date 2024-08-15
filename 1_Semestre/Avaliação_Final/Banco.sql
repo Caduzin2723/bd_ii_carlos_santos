@@ -21,7 +21,8 @@ CREATE TABLE IF NOT EXISTS Clientes(
     ID_cliente int(8) AUTO_INCREMENT,
     CPF varchar(11) not null,
     Nome varchar(255),
-    Senha varchar(255) not null,
+    Username varchar(255) NOT NULL,
+    Senha varchar(255) NOT NULL,
     Sexo varchar(255),
     Idade varchar(3),
     Endereco varchar(255),
@@ -31,16 +32,6 @@ CREATE TABLE IF NOT EXISTS Clientes(
     ID_filial int(3),
     PRIMARY KEY (ID_cliente),
     FOREIGN KEY (ID_filial) REFERENCES Filiais(ID_filial)
-);
-
--- Tabela de Login
-CREATE TABLE IF NOT EXISTS Login(
-    ID_login int(8) AUTO_INCREMENT,
-    ID_cliente int(8),
-    Username varchar(255) NOT NULL,
-    Senha varchar(255) NOT NULL,
-    PRIMARY KEY (ID_login),
-    FOREIGN KEY (ID_cliente) REFERENCES Clientes(ID_cliente)
 );
 
 -- Tabela de Funcionários
@@ -161,30 +152,17 @@ INSERT INTO Filiais (Endereco, Email, Telefone, Quant_mesas, Avaliacao) VALUES
 ('Rua O, 202', 'filial5@restaurante.com', '5555555555', 18, 4.3);
 
 -- Inserir dados na tabela Clientes
-INSERT INTO Clientes (CPF, Nome, Senha, Sexo, Idade, Endereco, Email, Telefone, Data_cadastro, ID_filial) VALUES 
-('12345678901', 'Maria Silva', 'senha123', 'Feminino', '25', 'Rua A, 123', 'maria.silva@gmail.com', '9876543210', '2023-01-01 10:00:00', 1),
-('23456789012', 'João Souza', 'senha234', 'Masculino', '30', 'Rua B, 456', 'joao.souza@gmail.com', '9876543211', '2023-01-02 11:00:00', 2),
-('34567890123', 'Ana Pereira', 'senha345', 'Feminino', '22', 'Rua C, 789', 'ana.pereira@gmail.com', '9876543212', '2023-01-03 12:00:00', 3),
-('45678901234', 'Carlos Santos', 'senha456', 'Masculino', '28', 'Rua D, 101', 'carlos.santos@gmail.com', '9876543213', '2023-01-04 13:00:00', 4),
-('56789012345', 'Julia Oliveira', 'senha567', 'Feminino', '26', 'Rua E, 202', 'julia.oliveira@gmail.com', '9876543214', '2023-01-05 14:00:00', 5),
-('67890123456', 'Pedro Lima', 'senha678', 'Masculino', '29', 'Rua F, 303', 'pedro.lima@gmail.com', '9876543215', '2023-01-06 15:00:00', 1),
-('78901234567', 'Mariana Costa', 'senha789', 'Feminino', '27', 'Rua G, 404', 'mariana.costa@gmail.com', '9876543216', '2023-01-07 16:00:00', 2),
-('89012345678', 'Lucas Almeida', 'senha890', 'Masculino', '24', 'Rua H, 505', 'lucas.almeida@gmail.com', '9876543217', '2023-01-08 17:00:00', 3),
-('90123456789', 'Larissa Carvalho', 'senha901', 'Feminino', '23', 'Rua I, 606', 'larissa.carvalho@gmail.com', '9876543218', '2023-01-09 18:00:00', 4),
-('01234567890', 'Ricardo Araújo', 'senha012', 'Masculino', '31', 'Rua J, 707', 'ricardo.araujo@gmail.com', '9876543219', '2023-01-10 19:00:00', 5);
-
--- Inserir dados na tabela Login
-INSERT INTO Login (ID_cliente, Username, Senha) VALUES
-(1, 'mariasilva', 'senha123'),
-(2, 'joaosouza', 'senha234'),
-(3, 'anapereira', 'senha345'),
-(4, 'carlossantos', 'senha456'),
-(5, 'juliaoliveira', 'senha567'),
-(6, 'pedrolima', 'senha678'),
-(7, 'marianacosta', 'senha789'),
-(8, 'lucasalmeida', 'senha890'),
-(9, 'larissacarvalho', 'senha901'),
-(10, 'ricardoaraujo', 'senha012');
+INSERT INTO Clientes (CPF, Nome, Username, Senha, Sexo, Idade, Endereco, Email, Telefone, Data_cadastro, ID_filial) VALUES 
+('12345678901', 'Maria Silva', 'mariasilva', 'senha123', 'Feminino', '25', 'Rua A, 123', 'maria.silva@gmail.com', '9876543210', '2023-01-01 10:00:00', 1),
+('23456789012', 'João Souza', 'joaosouza', 'senha234', 'Masculino', '30', 'Rua B, 456', 'joao.souza@gmail.com', '9876543211', '2023-01-02 11:00:00', 2),
+('34567890123', 'Ana Pereira', 'anapereira', 'senha345', 'Feminino', '22', 'Rua C, 789', 'ana.pereira@gmail.com', '9876543212', '2023-01-03 12:00:00', 3),
+('45678901234', 'Carlos Santos', 'carlossantos', 'senha456', 'Masculino', '28', 'Rua D, 101', 'carlos.santos@gmail.com', '9876543213', '2023-01-04 13:00:00', 4),
+('56789012345', 'Julia Oliveira', 'juliaoliveira', 'senha567', 'Feminino', '26', 'Rua E, 202', 'julia.oliveira@gmail.com', '9876543214', '2023-01-05 14:00:00', 5),
+('67890123456', 'Pedro Lima', 'pedrolima', 'senha678', 'Masculino', '29', 'Rua F, 303', 'pedro.lima@gmail.com', '9876543215', '2023-01-06 15:00:00', 1),
+('78901234567', 'Mariana Costa', 'marianacosta', 'senha789', 'Feminino', '27', 'Rua G, 404', 'mariana.costa@gmail.com', '9876543216', '2023-01-07 16:00:00', 2),
+('89012345678', 'Lucas Almeida', 'lucasalmeida', 'senha890', 'Masculino', '24', 'Rua H, 505', 'lucas.almeida@gmail.com', '9876543217', '2023-01-08 17:00:00', 3),
+('90123456789', 'Larissa Carvalho', 'larissacarvalho', 'senha901', 'Feminino', '23', 'Rua I, 606', 'larissa.carvalho@gmail.com', '9876543218', '2023-01-09 18:00:00', 4),
+('01234567890', 'Ricardo Araújo', 'ricardoaraujo', 'senha012', 'Masculino', '31', 'Rua J, 707', 'ricardo.araujo@gmail.com', '9876543219', '2023-01-10 19:00:00', 5);
 
 -- Inserir dados na tabela Funcionarios
 INSERT INTO Funcionarios (CPF, Nome, Sexo, Idade, Endereco, Email, Telefone, ID_filial, Cargo, Data_contatacao) VALUES
