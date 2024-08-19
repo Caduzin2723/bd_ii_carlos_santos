@@ -1,7 +1,7 @@
 /*@author Carlos Santos*/
 
 SELECT * 
-FROM Login 
+FROM Clientes
 WHERE Username = 'mariasilva' AND Senha = 'senha123'; /*Script das informações de login*/
 
 SELECT *
