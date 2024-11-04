@@ -1,4 +1,4 @@
---Por Arthur, Carlos Eduardo, Heitor e Jhonathan
+-- Por Arthur, Carlos Eduardo, Heitor e Jhonathan
 
 DROP DATABASE IF EXISTS Pokemon;
 
