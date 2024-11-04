@@ -1,4 +1,4 @@
---Por Arthur, Carlos Eduardo, Heitor e Jhonathan
+-- Por Arthur, Carlos Eduardo, Heitor e Jhonathan
 
 INSERT INTO Movimentos (Nome, PP, Acerto, Poder, Tipo, Descricao)
 VALUES
